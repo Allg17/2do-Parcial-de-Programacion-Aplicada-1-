@@ -35,6 +35,8 @@
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
             this.Consultabutton = new System.Windows.Forms.Button();
             this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.AHoradateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FInaldateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,8 @@
             this.TipocomboBox.FormattingEnabled = true;
             this.TipocomboBox.Items.AddRange(new object[] {
             "ID",
-            "Nombre"});
+            "Nombre",
+            "fecha"});
             this.TipocomboBox.Location = new System.Drawing.Point(15, 69);
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(121, 21);
@@ -102,11 +105,27 @@
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
+            // AHoradateTimePicker1
+            // 
+            this.AHoradateTimePicker1.Location = new System.Drawing.Point(12, 12);
+            this.AHoradateTimePicker1.Name = "AHoradateTimePicker1";
+            this.AHoradateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.AHoradateTimePicker1.TabIndex = 7;
+            // 
+            // FInaldateTimePicker2
+            // 
+            this.FInaldateTimePicker2.Location = new System.Drawing.Point(230, 12);
+            this.FInaldateTimePicker2.Name = "FInaldateTimePicker2";
+            this.FInaldateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.FInaldateTimePicker2.TabIndex = 8;
+            // 
             // CPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 534);
+            this.Controls.Add(this.FInaldateTimePicker2);
+            this.Controls.Add(this.AHoradateTimePicker1);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultabutton);
             this.Controls.Add(this.TipocomboBox);
@@ -131,5 +150,7 @@
         private System.Windows.Forms.ComboBox TipocomboBox;
         private System.Windows.Forms.Button Consultabutton;
         private System.Windows.Forms.Button Imprimirbutton;
+        private System.Windows.Forms.DateTimePicker AHoradateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FInaldateTimePicker2;
     }
 }

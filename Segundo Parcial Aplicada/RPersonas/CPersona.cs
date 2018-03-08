@@ -39,7 +39,10 @@ namespace Segundo_Parcial_Aplicada.RPersonas
                     id = int.Parse(CriteriotextBox.Text);
                     filtrar = t => t.Nombre.Contains(id.ToString());
                     break;
-
+                    //fecha
+                case 2:
+                    filtrar = t => (t.Fecha >= AHoradateTimePicker1.Value) && (t.Fecha <= FInaldateTimePicker2.Value);
+                    break;
             }
           
 
