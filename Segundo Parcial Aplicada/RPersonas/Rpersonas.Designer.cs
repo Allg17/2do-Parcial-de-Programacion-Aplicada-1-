@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox = new System.Windows.Forms.TextBox();
             this.ReporteButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
@@ -54,20 +53,17 @@
             this.NombreErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TipoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TelefonoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.ModificarnumericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.TraerNumeroButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TipoErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModificarnumericUpDown1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox
-            // 
-            this.textBox.Location = new System.Drawing.Point(405, 155);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(100, 20);
-            this.textBox.TabIndex = 37;
             // 
             // ReporteButton
             // 
@@ -80,7 +76,7 @@
             // 
             // AgregarButton
             // 
-            this.AgregarButton.Location = new System.Drawing.Point(303, 155);
+            this.AgregarButton.Location = new System.Drawing.Point(303, 138);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(75, 23);
             this.AgregarButton.TabIndex = 35;
@@ -96,6 +92,7 @@
             this.BuscarButton.TabIndex = 34;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // ConsultaButton
             // 
@@ -105,6 +102,7 @@
             this.ConsultaButton.TabIndex = 33;
             this.ConsultaButton.Text = "Consulta";
             this.ConsultaButton.UseVisualStyleBackColor = true;
+            this.ConsultaButton.Click += new System.EventHandler(this.ConsultaButton_Click);
             // 
             // EliminarButton
             // 
@@ -114,6 +112,7 @@
             this.EliminarButton.TabIndex = 32;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -164,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 136);
+            this.label5.Location = new System.Drawing.Point(188, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 28;
@@ -172,7 +171,7 @@
             // 
             // TelefonomaskedTextBox
             // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(188, 155);
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(188, 138);
             this.TelefonomaskedTextBox.Mask = "(809)000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(100, 20);
@@ -181,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 139);
+            this.label4.Location = new System.Drawing.Point(21, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 26;
@@ -190,7 +189,7 @@
             // TipocomboBox
             // 
             this.TipocomboBox.FormattingEnabled = true;
-            this.TipocomboBox.Location = new System.Drawing.Point(22, 155);
+            this.TipocomboBox.Location = new System.Drawing.Point(22, 138);
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(121, 21);
             this.TipocomboBox.TabIndex = 25;
@@ -259,12 +258,41 @@
             // 
             this.TelefonoErrorProvider.ContainerControl = this;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 182);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Id Numero";
+            // 
+            // ModificarnumericUpDown1
+            // 
+            this.ModificarnumericUpDown1.Location = new System.Drawing.Point(82, 180);
+            this.ModificarnumericUpDown1.Name = "ModificarnumericUpDown1";
+            this.ModificarnumericUpDown1.Size = new System.Drawing.Size(61, 20);
+            this.ModificarnumericUpDown1.TabIndex = 38;
+            // 
+            // TraerNumeroButton
+            // 
+            this.TraerNumeroButton.Enabled = false;
+            this.TraerNumeroButton.Location = new System.Drawing.Point(188, 180);
+            this.TraerNumeroButton.Name = "TraerNumeroButton";
+            this.TraerNumeroButton.Size = new System.Drawing.Size(100, 23);
+            this.TraerNumeroButton.TabIndex = 39;
+            this.TraerNumeroButton.Text = "Modificar Numero";
+            this.TraerNumeroButton.UseVisualStyleBackColor = true;
+            this.TraerNumeroButton.Click += new System.EventHandler(this.TraerNumeroButton_Click);
+            // 
             // Rpersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 450);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.TraerNumeroButton);
+            this.Controls.Add(this.ModificarnumericUpDown1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.BuscarButton);
@@ -291,14 +319,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.NombreErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TipoErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModificarnumericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button ReporteButton;
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.Button BuscarButton;
@@ -323,6 +350,9 @@
         private System.Windows.Forms.ErrorProvider NombreErrorProvider;
         private System.Windows.Forms.ErrorProvider TipoErrorProvider;
         private System.Windows.Forms.ErrorProvider TelefonoErrorProvider;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown ModificarnumericUpDown1;
+        private System.Windows.Forms.Button TraerNumeroButton;
     }
 }
 

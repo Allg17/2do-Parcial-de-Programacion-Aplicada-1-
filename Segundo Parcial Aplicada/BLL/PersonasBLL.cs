@@ -16,10 +16,10 @@ namespace Segundo_Parcial_Aplicada.BLL
             Contexto db = new Contexto();
             try
             {
-                foreach (var telefono in persona.telefonoDetalle)
-                {
-                    BLL.TelefonosBLL.Guardar(telefono);
-                }
+                //foreach (var telefono in persona.telefonoDetalle)
+                //{
+                //    BLL.TelefonosBLL.Guardar(telefono);
+                //}
 
                 if (db.Persona.Add(persona) != null)
                 {
@@ -65,6 +65,7 @@ namespace Segundo_Parcial_Aplicada.BLL
             Contexto db = new Contexto();
             try
             {
+                BLL.TelefonosBLL.Modificar(persona.telefonoDetalle);
                 db.Entry(persona).State = System.Data.Entity.EntityState.Modified;
                 if (db.SaveChanges() > 0)
                 {

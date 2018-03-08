@@ -5,7 +5,7 @@ use AplicadaSegundoParcials
 create table Personas
 (
 	IdPersonas int primary key identity(1,1),
-	Nombre varchar(30),
+	Nombre varchar(MAX),
 	Fecha date
 
 );
@@ -13,15 +13,15 @@ create table Personas
 create table Telefonos
 (
 	IdTelefono int primary key identity(1,1),
-	TipodeTelefono varchar(10),
-	Telefono varchar(30),
+	TipodeTelefono varchar(MAX),
+	Telefono varchar(MAX),
 	IdPersonas int
 );
 
 create table TipoTelefonoes
 (
 	IdTipoTelefono int primary key identity(1,1),
-	TipoTelefonos varchar(15)
+	TipoTelefonos varchar(MAX)
 );
 
 

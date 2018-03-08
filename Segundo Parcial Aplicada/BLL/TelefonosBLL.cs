@@ -31,6 +31,35 @@ namespace Segundo_Parcial_Aplicada.BLL
             return paso;
         }
 
+        public static bool Guardar(List<Telefonos> telefono)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            try
+            {
+                foreach (var item in telefono)
+                {
+                    if(item.IdTelefono==0)
+                    {
+                        if (db.Telefono.Add(item) != null)
+                        {
+                            db.SaveChanges();
+                            paso = true;
+                        }
+                    }
+                   
+                }
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return paso;
+        }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -38,9 +67,10 @@ namespace Segundo_Parcial_Aplicada.BLL
             try
             {
                 var eliminar = db.Telefono.Find(id);
-                if (db.Telefono.Remove(eliminar) != null)
+                db.Telefono.RemoveRange(db.Telefono.Where(x => x.IdPersonas == eliminar.IdPersonas));
+                if (db.SaveChanges()>0)
                 {
-                    db.SaveChanges();
+                    
                     paso = true;
                 }
 
@@ -54,17 +84,22 @@ namespace Segundo_Parcial_Aplicada.BLL
 
         }
 
-        public static bool Modificar(Telefonos telefono)
+        public static bool Modificar(List<Telefonos> telefono)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                db.Entry(telefono).State = System.Data.Entity.EntityState.Modified;
-                if (db.SaveChanges() > 0)
+                foreach (var item in telefono)
                 {
-                    paso = true;
+                    db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    if (db.SaveChanges() > 0)
+                    {
+                        paso = true;
+                    }
                 }
+                
+               
 
             }
             catch (Exception)

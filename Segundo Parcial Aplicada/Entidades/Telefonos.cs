@@ -9,17 +9,19 @@ namespace Segundo_Parcial_Aplicada.Entidades
    public class Telefonos
    {
         [Key]
+        public int IdTelefono { get; set; }
         public string TipodeTelefono { get; set; }
         public string Telefono { get; set; }
-        public int IdTelefono { get; set; }
         public int IdPersonas { get; set; }
 
-        public Telefonos(string telefono, string tipoTelefono)
+        public Telefonos(string telefono, string tipoTelefono, int IdPersonas )
         {
 
             this.Telefono = telefono;
             this.TipodeTelefono = tipoTelefono;
-          
+            this.IdPersonas = IdPersonas;
+
+
         }
 
         public Telefonos()
