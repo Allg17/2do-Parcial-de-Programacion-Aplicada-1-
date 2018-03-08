@@ -55,6 +55,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ModificarnumericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.TraerNumeroButton = new System.Windows.Forms.Button();
+            this.IdNumeroerrorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDerrorProvider)).BeginInit();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TipoErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModificarnumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumeroerrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // AgregarButton
@@ -275,6 +277,10 @@
             this.TraerNumeroButton.UseVisualStyleBackColor = true;
             this.TraerNumeroButton.Click += new System.EventHandler(this.TraerNumeroButton_Click);
             // 
+            // IdNumeroerrorProvider1
+            // 
+            this.IdNumeroerrorProvider1.ContainerControl = this;
+            // 
             // Rpersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TipoErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModificarnumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdNumeroerrorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,6 +348,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown ModificarnumericUpDown1;
         private System.Windows.Forms.Button TraerNumeroButton;
+        private System.Windows.Forms.ErrorProvider IdNumeroerrorProvider1;
     }
 }
 

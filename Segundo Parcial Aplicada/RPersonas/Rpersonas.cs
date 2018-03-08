@@ -38,13 +38,23 @@ namespace Segundo_Parcial_Aplicada
                 mensage = true;
 
             }
-            if (num == 3 && TipocomboBox.SelectedItem == null && TelefonomaskedTextBox.Text == string.Empty)
+            if (num == 3 && TipocomboBox.SelectedItem == null && TipocomboBox.Text ==string.Empty)
+            {
+                TipoErrorProvider.SetError(TipocomboBox, "Campo Vacio");
+                mensage = true;
+              
+
+            }
+            if (num == 3 && TelefonomaskedTextBox.TextLength<13)
             {
                 TipoErrorProvider.SetError(TipocomboBox, "Campo Vacio");
                 TelefonoErrorProvider.SetError(TelefonomaskedTextBox, "Campo Vacio");
                 mensage = true;
-
-
+            }
+            if(num==4 && ModificarnumericUpDown1.Value == 0)
+            {
+                IdNumeroerrorProvider1.SetError(ModificarnumericUpDown1,"Campo Vacio");
+                mensage = true;
             }
             return mensage;
         }
@@ -55,6 +65,7 @@ namespace Segundo_Parcial_Aplicada
             TipoErrorProvider.Clear();
             NombreErrorProvider.Clear();
             TelefonoErrorProvider.Clear();
+            IdNumeroerrorProvider1.Clear();
         }
 
         private void AgregarAComboBox()
@@ -75,6 +86,12 @@ namespace Segundo_Parcial_Aplicada
 
         private void AgregarButton_Click_1(object sender, EventArgs e)
         {
+            LimpiarError();
+            if (SetError(3))
+            {
+                MessageBox.Show("Campos Vacios");
+                return;
+            }
             if(IDnumericUpDown1.Value==0)
             {
                 gente.telefonoDetalle.Add(new Telefonos(TelefonomaskedTextBox.Text, TipocomboBox.SelectedItem.ToString(), gente.IdPersonas));
@@ -105,6 +122,7 @@ namespace Segundo_Parcial_Aplicada
         private void NuevoButtton_Click_1(object sender, EventArgs e)
         {
             IDnumericUpDown1.Value = 0;
+            ModificarnumericUpDown1.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
             NombreTextBox.Clear();
             TipocomboBox.DataSource = null;
@@ -113,6 +131,7 @@ namespace Segundo_Parcial_Aplicada
             LimpiarError();
             gente = new Personas();
             TipocomboBox.Refresh();
+            TipocomboBox.Text = string.Empty;
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -169,6 +188,12 @@ namespace Segundo_Parcial_Aplicada
         {
             var persona = BLL.PersonasBLL.Buscar(Convert.ToInt32(IDnumericUpDown1.Value));
             int id=0;
+            LimpiarError();
+            if(SetError(1))
+            {
+                MessageBox.Show("Llenar campos Vacios");
+                return;
+            }
             foreach (var item in persona.telefonoDetalle)
             {
                 id = item.IdTelefono;
@@ -190,6 +215,12 @@ namespace Segundo_Parcial_Aplicada
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+            LimpiarError();
+            if (SetError(1))
+            {
+                MessageBox.Show("Campos Vacios");
+                return;
+            }
             var persona = BLL.PersonasBLL.Buscar(Convert.ToInt32(IDnumericUpDown1.Value));
             if(persona!=null)
             {
@@ -208,10 +239,18 @@ namespace Segundo_Parcial_Aplicada
 
         private void TraerNumeroButton_Click(object sender, EventArgs e)
         {
+            LimpiarError();
+            if(SetError(4))
+            {
+                MessageBox.Show("Llenar campo vacio");
+                return;
+            }
             var numero = BLL.TelefonosBLL.Buscar(Convert.ToInt32(ModificarnumericUpDown1.Value));
             if(numero !=null)
             {
                 TelefonomaskedTextBox.Text = numero.Telefono;
+                TipocomboBox.Text = numero.TipodeTelefono;
+
             }
             else
             {
@@ -251,5 +290,7 @@ namespace Segundo_Parcial_Aplicada
             CPersona abrir = new CPersona();
             abrir.Show();
         }
+
+        
     }
 }
