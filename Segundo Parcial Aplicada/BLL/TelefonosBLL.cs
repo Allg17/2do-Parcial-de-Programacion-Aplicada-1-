@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Segundo_Parcial_Aplicada.BLL
 {
-   public  class TelefonosBLL
+   public class TelefonosBLL
     {
         public static bool Guardar(Telefonos telefono)
         {

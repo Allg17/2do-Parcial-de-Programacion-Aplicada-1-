@@ -20,6 +20,7 @@ namespace Segundo_Parcial_Aplicada.BLL
                 {
                     BLL.TelefonosBLL.Guardar(telefono);
                 }
+
                 if (db.Persona.Add(persona) != null)
                 {
                     db.SaveChanges();

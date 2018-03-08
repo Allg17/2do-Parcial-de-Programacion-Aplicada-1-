@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Segundo_Parcial_Aplicada.Entidades
 {
-   public  class TipoTelefonoes
+   public class TipoTelefonoes
     {
         [Key]
         public int IdTipoTelefono { get; set; }

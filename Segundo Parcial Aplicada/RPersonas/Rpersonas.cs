@@ -90,7 +90,7 @@ namespace Segundo_Parcial_Aplicada
         private void AgregarButton_Click_1(object sender, EventArgs e)
         {
             DetalledataGridView.DataSource = null;
-            gente.telefonoDetalle.Add(new Telefonos(textBox.Text, TipocomboBox.SelectedItem.ToString(), gente.IdPersonas));
+            gente.telefonoDetalle.Add(new Telefonos(textBox.Text, TipocomboBox.SelectedItem.ToString()));
             DetalledataGridView.DataSource = gente.telefonoDetalle;
         }
 
