@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ReporteButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.ConsultaButton = new System.Windows.Forms.Button();
@@ -64,15 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModificarnumericUpDown1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ReporteButton
-            // 
-            this.ReporteButton.Location = new System.Drawing.Point(384, 382);
-            this.ReporteButton.Name = "ReporteButton";
-            this.ReporteButton.Size = new System.Drawing.Size(75, 23);
-            this.ReporteButton.TabIndex = 36;
-            this.ReporteButton.Text = "Reporte";
-            this.ReporteButton.UseVisualStyleBackColor = true;
             // 
             // AgregarButton
             // 
@@ -293,7 +283,6 @@
             this.Controls.Add(this.TraerNumeroButton);
             this.Controls.Add(this.ModificarnumericUpDown1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.ConsultaButton);
@@ -326,7 +315,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button ReporteButton;
         private System.Windows.Forms.Button AgregarButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button ConsultaButton;
