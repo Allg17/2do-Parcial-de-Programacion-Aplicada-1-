@@ -36,8 +36,8 @@ namespace Segundo_Parcial_Aplicada.RPersonas
                     break;
                //Nombre
                 case 1:
-                    id = int.Parse(CriteriotextBox.Text);
-                    filtrar = t => t.Nombre.Contains(id.ToString());
+                    
+                    filtrar = t => t.Nombre.Contains(CriteriotextBox.Text);
                     break;
                     //fecha
                 case 2:
